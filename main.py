@@ -1,5 +1,4 @@
 import socket
-import sqlite3
 import psycopg2
 
 def data_handler(data):
@@ -44,6 +43,7 @@ def main():
             
             # Send response
             client_socket.send("Message received".encode())
+            data_handler(data)
             client_socket.close()
     except KeyboardInterrupt:
         print("Server shutting down")

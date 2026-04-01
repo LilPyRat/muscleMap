@@ -6,6 +6,7 @@ def connect_to_socket(host='localhost', port=5000):
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         client_socket.connect((host, port))
         print(f"Connected to {host}:{port}")
+        client_socket.sendall(b"Hello from client")
         return client_socket
     except ConnectionRefusedError:
         print("Connection refused. Make sure the server is running.")
