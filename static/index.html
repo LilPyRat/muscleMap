@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscle Map - Расчет нагрузки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Muscle Map</h1>
+        
+        <div class="card">
+            <h2>Добавить упражнение</h2>
+            <div class="form-group">
+                <label for="exercise-select">Упражнение:</label>
+                <select id="exercise-select">
+                    <option value="">Выберите упражнение</option>
+                </select>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="weight-input">Вес (кг):</label>
+                    <input type="number" id="weight-input" placeholder="Например: 50" min="0" step="0.5">
+                </div>
+                
+                <div class="form-group">
+                    <label for="reps-input">Повторения:</label>
+                    <input type="number" id="reps-input" placeholder="Например: 10" min="1" max="100">
+                </div>
+            </div>
+            
+            <button id="add-exercise-btn" class="btn btn-primary">Добавить</button>
+        </div>
+        
+        <div class="card" id="current-workout-card" style="display: none;">
+            <h2>Текущая тренировка</h2>
+            <div id="exercises-list"></div>
+            
+            <div class="actions">
+                <button id="calculate-btn" class="btn btn-success">Рассчитать нагрузку</button>
+                <button id="save-btn" class="btn btn-secondary">Сохранить тренировку</button>
+                <button id="clear-btn" class="btn btn-danger">Очистить</button>
+            </div>
+        </div>
+        
+        <div class="card" id="results-card" style="display: none;">
+            <h2>Результаты расчета</h2>
+            <div id="results-list"></div>
+        </div>
+        
+        <div class="card" id="history-card">
+            <h2>История тренировок</h2>
+            <button id="load-history-btn" class="btn btn-secondary">Загрузить историю</button>
+            <div id="history-list"></div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
